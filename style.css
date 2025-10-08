@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f9fafb;
+  color: #333;
+  padding: 1rem;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+header .title h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+header .controls {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+input, select, button {
+  padding: 0.5rem 0.7rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+button {
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background: #f0f0f0;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 1.5rem;
+}
+
+#product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.product {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.product img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.product .info {
+  padding: 1rem;
+}
+
+.product .info h3 {
+  margin: 0 0 0.3rem 0;
+}
+
+.product .info p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.product .info .bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.product button {
+  background: #10b981;
+  color: white;
+  border: none;
+}
+
+#cart {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 1rem;
+  position: sticky;
+  top: 1rem;
+  height: fit-content;
+}
+
+#cart.hidden {
+  display: none;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+}
+
+.cart-item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.cart-item .details {
+  flex: 1;
+  margin-left: 0.5rem;
+}
+
+.cart-item .details p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.cart-item .qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.cart-item button {
+  border: 1px solid #ccc;
+  padding: 0.2rem 0.5rem;
+  background: #f8f8f8;
+}
+
+#cart-footer {
+  margin-top: 1rem;
+}
+
+#cart-footer p {
+  margin: 0.5rem 0;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 800px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  #cart {
+    position: relative;
+    top: 0;
+  }
+}
